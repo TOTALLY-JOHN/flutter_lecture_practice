@@ -67,6 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: () async {
                     // ID:비밀번호
+                    // test@codefactory.ai / testtest
                     final rawString = '$username:$password';
 
                     Codec<String, String> stringToBase64 = utf8.fuse(base64);
@@ -77,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       'http://$ip/auth/login',
                       options: Options(
                         headers: {
-                          'authorization': 'Bearer $token',
+                          'authorization': 'Basic $token',
                         },
                       ),
                     );
